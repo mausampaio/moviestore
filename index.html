@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Store</title>
+    <!-- CSS nativo -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container space space-top">
+            <div class="card">
+                <h5 class="card-header">Era uma Vez em... Hollywood</h5>
+                <div class="card-body">
+                    <figure>
+                        <img class="poster" src="http://artecult.com/wp-content/uploads/2019/08/Poster-Era-Uma-Vez-Em-Hollywood-416x600.jpg" alt="Cartaz do filme Era uma Vez em... Holywood">
+                    </figure>
+                    <h5 class="card-title">Sinopse e detalhes</h5>
+                    <p class="card-text text">Los Angeles, 1969. Rick Dalton (Leonardo DiCaprio) é um ator de TV que, juntamente com seu dublê, está decidido a fazer o nome em Hollywood. Para tanto, ele conhece muitas pessoas influentes na indústria cinematográfica, o que os acaba levando aos assassinatos realizados por Charles Manson na época, entre eles o da atriz Sharon Tate (Margot Robbie), que na época estava grávida do diretor Roman Polanski (Rafal Zawierucha).</p>
+                    <h5 class="card-title">Elenco</h5>
+                    <p class="card-text text">Al Pacino | Brad Pitt | Dakota Fanning | Kurt Russell | Leonardo DiCaprio | Margaret Qualley | Margot Robbie | Timothy Olyphant</p>
+                    <h5 class="card-title">Direção</h5>
+                    <p class="card-text">Quentin Tarantino</p>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 space"></div>
+                        <div class="col-md-3 col-sm-12 space">
+                            <button type="button" class="btn btn-block btn-info" data-toggle="modal" data-target="#trailer">
+                                Assista o trailer
+                            </button>
+                        </div>
+                        <div class="col-md-3 col-sm-12 space">
+                            <button type="button" class="btn btn-block btn-info" data-toggle="modal" data-target="#compra">
+                                Comprar por R$ 9,90
+                            </button>
+                        </div>
+                        <div class="col-md-3 col-sm-12 space"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal Trailer -->
+    <div class="modal fade" id="trailer" tabindex="-1" role="dialog" aria-labelledby="trailerLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/OYGUQmJlgiE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Compra -->
+    <div class="modal fade" id="compra" tabindex="-1" role="dialog" aria-labelledby="compraLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Informações de compra</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Digite seu email no campo abaixo e o link de download será enviado.</p>
+                    <input type="email" class="form-control" id="compraEmail" aria-describedby="emailHelp" placeholder="Email">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal" onclick="comprar()">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Scripts Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/compra.js"></script>
+</body>
+</html>
