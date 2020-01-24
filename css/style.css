@@ -2,6 +2,7 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: cadetblue;
+    font-family: 'Montserrat', sans-serif !important;
 }
 header {
     width: 100%;
@@ -10,6 +11,13 @@ header {
     background-size: cover;
     display: block;
     position: relative;
+}
+a {
+    color: black !important;
+}
+a:hover {
+    color: cadetblue !important;
+    text-decoration: none !important;
 }
 .space {
     padding-bottom: 25px;
